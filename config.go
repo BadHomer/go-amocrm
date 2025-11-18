@@ -52,6 +52,11 @@ const (
 	CustomerModePeriodicity = "periodicity"
 )
 
+// Tasks Contants
+const (
+	tasksURL = "api/v4/tasks"
+)
+
 type makeRequestOptions struct {
 	// Method is a request's method
 	Method string
@@ -71,7 +76,7 @@ type Params struct {
 	Limit     string
 	Query     string
 	Filter    map[string]string
-	Order     string
+	Order     string //Format: "created_at,desc" [ 1 - field, 2 - direction]
 	ContactID string
 	ChatID    string
 }
@@ -81,4 +86,5 @@ type With struct {
 	Contacts        bool
 	Leads           bool
 	Companies       bool
+	Customers       bool
 }

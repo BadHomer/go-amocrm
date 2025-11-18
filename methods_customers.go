@@ -3,8 +3,8 @@ package amocrm
 import (
 	"fmt"
 
+	"github.com/BadHomer/go-amocrm/models"
 	"github.com/gofiber/fiber/v2"
-	"github.com/whatcrm/go-amocrm/models"
 )
 
 func (c *Create) CustomersMode(in models.CustomersMode) (out models.CustomersMode, err error) {

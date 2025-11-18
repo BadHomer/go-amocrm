@@ -1,8 +1,8 @@
 package example
 
 import (
-	"github.com/whatcrm/go-amocrm"
-	"github.com/whatcrm/go-amocrm/models"
+	"github.com/BadHomer/go-amocrm"
+	"github.com/BadHomer/go-amocrm/models"
 	"log"
 	"time"
 )

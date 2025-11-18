@@ -3,8 +3,8 @@ package amocrm
 import (
 	"log"
 
+	"github.com/BadHomer/go-amocrm/models"
 	"github.com/gofiber/fiber/v2"
-	"github.com/whatcrm/go-amocrm/models"
 )
 
 // TODO GET Parameters in Requests - https://www.amocrm.ru/developers/content/crm_platform/leads-api#leads-list

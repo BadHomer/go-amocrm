@@ -15,7 +15,7 @@ To get started with **go-amocrm**, you'll need to do the following:
 - Here's an example of how to install the package:
 
 ```
-go get github.com/whatcrm/go-amocrm
+go get github.com/BadHomer/go-amocrm
 ```
 
 ## Models
