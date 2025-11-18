@@ -19,29 +19,27 @@ type CustomFields struct {
 }
 
 type CustomFieldsValues struct {
-	Value    any    `json:"value,omitempty"`
+	Value    string `json:"value,omitempty"`
 	EnumID   int    `json:"enum_id,omitempty"`
 	EnumCode string `json:"enum_code,omitempty"`
 }
 
 type RequestResponse struct {
-	TotalItems int               `json:"_total_items,omitempty"`
-	Page       int               `json:"_page,omitempty"`
-	Links      *LinkResponse     `json:"_links,omitempty"`
-	Embedded   *ResponseEmbedded `json:"_embedded,omitempty"`
-}
-
-type ResponseEmbedded struct {
-	Contacts     []Contact     `json:"contacts,omitempty"`
-	Companies    []Company     `json:"companies,omitempty"`
-	Leads        []Lead        `json:"leads,omitempty"`
-	Tags         []Tag         `json:"tags,omitempty"`
-	Unsorted     []Unsorted    `json:"unsorted,omitempty"`
-	Customers    []Customer    `json:"customers,omitempty"`
-	Transactions []Transaction `json:"transactions,omitempty"`
-	Chats        []Chat        `json:"chats,omitempty"`
-	Links        []Link        `json:"links"`
-	Tasks        []Task        `json:"tasks"`
+	TotalItems int           `json:"_total_items,omitempty"`
+	Page       int           `json:"_page,omitempty"`
+	Links      *LinkResponse `json:"_links,omitempty"`
+	Embedded   struct {
+		Contacts     []Contact     `json:"contacts,omitempty"`
+		Companies    []Company     `json:"companies,omitempty"`
+		Leads        []Lead        `json:"leads,omitempty"`
+		Tags         []Tag         `json:"tags,omitempty"`
+		Unsorted     []Unsorted    `json:"unsorted,omitempty"`
+		Customers    []Customer    `json:"customers,omitempty"`
+		Transactions []Transaction `json:"transactions,omitempty"`
+		Chats        []Chat        `json:"chats,omitempty"`
+		Links        []Link        `json:"links"`
+		Pipelines    []Pipeline    `json:"pipelines,omitempty"`
+	} `json:"_embedded,omitempty"`
 }
 
 type Response struct {

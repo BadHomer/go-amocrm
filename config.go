@@ -17,6 +17,10 @@ const (
 	leadUnsortedSIP = "api/v4/leads/unsorted/sip"
 )
 
+const (
+	pipelineURL = "api/v4/leads/pipelines"
+)
+
 // Contacts Constants
 const (
 	contactsURL     = "api/v4/contacts"
@@ -48,11 +52,6 @@ const (
 	CustomerModePeriodicity = "periodicity"
 )
 
-// Tasks Contants
-const (
-	tasksURL = "api/v4/tasks"
-)
-
 type makeRequestOptions struct {
 	// Method is a request's method
 	Method string
@@ -72,7 +71,7 @@ type Params struct {
 	Limit     string
 	Query     string
 	Filter    map[string]string
-	Order     string //Format: "created_at,desc" [ 1 - field, 2 - direction]
+	Order     string
 	ContactID string
 	ChatID    string
 }
@@ -82,5 +81,4 @@ type With struct {
 	Contacts        bool
 	Leads           bool
 	Companies       bool
-	Customers       bool
 }

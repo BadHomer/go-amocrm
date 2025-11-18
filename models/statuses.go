@@ -22,3 +22,14 @@ type Condition []struct {
 		Value int `json:"value"`
 	} `json:"conditions"`
 }
+
+type Status struct {
+	ID         int    `json:"id,omitempty"`
+	Name       string `json:"name,omitempty"`
+	Sort       int    `json:"sort,omitempty"`
+	IsEditable bool   `json:"is_editable,omitempty"`
+	PipelineID int    `json:"pipeline_id,omitempty"`
+	Color      string `json:"color,omitempty"`
+	Type       int    `json:"type,omitempty"`
+	AccountID  int    `json:"account_id,omitempty"`
+}
