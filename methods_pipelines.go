@@ -5,7 +5,7 @@ import (
 	"github.com/gofiber/fiber/v2"
 )
 
-func (c *Get) Pipelines(id string, params *Params) (pipeline []models.Pipeline, err error) {
+func (c *Get) Pipelines(id string, params *Params) (out models.RequestResponse, err error) {
 	c.api.log("GetLead request is started...")
 
 	options := makeRequestOptions{
@@ -23,18 +23,25 @@ func (c *Get) Pipelines(id string, params *Params) (pipeline []models.Pipeline, 
 		if err != nil {
 			return
 		}
-		pipeline = []models.Pipeline{*options.Out.(*models.Pipeline)}
-		c.api.log("returning the struct...")
-		return
-	} else {
-		// All pipelines
-		options.Out = &models.RequestResponse{}
-		err = c.api.makeRequest(options)
-		if err != nil {
-			return
+
+		out = models.RequestResponse{
+			Embedded: &models.ResponseEmbedded{
+				Pipelines: []models.Pipeline{
+					*options.Out.(*models.Pipeline),
+				},
+			},
 		}
-		pipeline = options.Out.(*models.RequestResponse).Embedded.Pipelines
 		c.api.log("returning the struct...")
 		return
 	}
+
+	// All leads
+	options.Out = &out
+	err = c.api.makeRequest(options)
+	if err != nil {
+		return
+	}
+
+	c.api.log("returning the struct...")
+	return
 }
