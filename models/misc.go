@@ -43,6 +43,7 @@ type ResponseEmbedded struct {
 	Links        []Link        `json:"links"`
 	Tasks        []Task        `json:"tasks"`
 	Pipelines    []Pipeline    `json:"pipelines,omitempty"`
+	Users        []User        `json:"users,omitempty"`
 }
 
 type Response struct {

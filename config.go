@@ -21,6 +21,10 @@ const (
 	pipelineURL = "api/v4/leads/pipelines"
 )
 
+const (
+	userURL = "api/v4/users"
+)
+
 // Contacts Constants
 const (
 	contactsURL     = "api/v4/contacts"
