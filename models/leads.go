@@ -1,7 +1,7 @@
 package models
 
 type Lead struct {
-	// ID сделки
+	// ID сделкии
 	ID int `json:"id,omitempty"`
 	// Название сделки
 	Name string `json:"name,omitempty"`
