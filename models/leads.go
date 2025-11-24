@@ -66,6 +66,25 @@ type LeadModifyResponse struct {
 	} `json:"_links,omitempty"`
 }
 
+type LeadsModifyResponse struct {
+	Embedded struct {
+		Leads []struct {
+			ID        int `json:"id,omitempty"`
+			UpdatedAt int `json:"updated_at,omitempty"`
+			Links     struct {
+				Self struct {
+					Href string `json:"href,omitempty"`
+				} `json:"self,omitempty"`
+			} `json:"_links,omitempty"`
+		} `json:"leads,omitempty"`
+	} `json:"_embedded,omitempty"`
+	Links struct {
+		Self struct {
+			Href string `json:"href,omitempty"`
+		} `json:"self,omitempty"`
+	} `json:"_links,omitempty"`
+}
+
 type Unsorted struct {
 	UID        string `json:"uid,omitempty"`
 	SourceUID  string `json:"source_uid,omitempty"`

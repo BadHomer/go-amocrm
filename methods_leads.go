@@ -164,3 +164,22 @@ func (c *Update) Lead(id string, lead *models.Lead, params *Params) (resp models
 	c.api.log("returning the struct...")
 	return
 }
+
+func (c *Update) Leads(leads []*models.Lead, params *Params) (resp models.LeadModifyResponse, err error) {
+	c.api.log("ModifyLead request started...")
+
+	options := makeRequestOptions{
+		Method:  fiber.MethodPatch,
+		BaseURL: leadURL,
+		In:      leads,
+		Out:     &resp,
+		Params:  params,
+	}
+	err = c.api.makeRequest(options)
+	if err != nil {
+		return
+	}
+
+	c.api.log("returning the struct...")
+	return
+}
