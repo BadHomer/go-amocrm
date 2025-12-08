@@ -5,9 +5,6 @@ type User struct {
 	Name     string       `json:"name,omitempty"`
 	Email    string       `json:"email,omitempty"`
 	Lang     string       `json:"lang,omitempty"`
-	IsAdmin  bool         `json:"is_admin,omitempty"`
-	IsFree   bool         `json:"is_free,omitempty"`
-	IsActive bool         `json:"is_active,omitempty"`
 	GroupID  int          `json:"group_id,omitempty"`
 	RoleID   int          `json:"role_id,omitempty"`
 	Embedded UserEmbedded `json:"_embedded,omitempty"`
@@ -18,9 +15,12 @@ type UserEmbedded struct {
 }
 
 type RightEntity struct {
-	View   string `json:"view,omitempty"`
-	Edit   string `json:"edit,omitempty"`
-	Add    string `json:"add,omitempty"`
-	Delete string `json:"delete,omitempty"`
-	Export string `json:"export,omitempty"`
+	View     string `json:"view,omitempty"`
+	Edit     string `json:"edit,omitempty"`
+	Add      string `json:"add,omitempty"`
+	Delete   string `json:"delete,omitempty"`
+	Export   string `json:"export,omitempty"`
+	IsAdmin  bool   `json:"is_admin,omitempty"`
+	IsFree   bool   `json:"is_free,omitempty"`
+	IsActive bool   `json:"is_active,omitempty"`
 }
