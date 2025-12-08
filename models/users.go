@@ -8,6 +8,7 @@ type User struct {
 	GroupID  int          `json:"group_id,omitempty"`
 	RoleID   int          `json:"role_id,omitempty"`
 	Embedded UserEmbedded `json:"_embedded,omitempty"`
+	Rights   RightEntity  `json:"rights,omitempty"`
 }
 
 type UserEmbedded struct {
