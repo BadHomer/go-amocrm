@@ -83,7 +83,9 @@ func (c *Get) Leads(id string, params *Params) (out models.RequestResponse, err 
 		if err != nil {
 			return
 		}
-
+		if params.With.Contacts {
+			options.BaseURL += "?with=contacts"
+		}
 		out = models.RequestResponse{
 			Embedded: &models.ResponseEmbedded{
 				Leads: []models.Lead{
