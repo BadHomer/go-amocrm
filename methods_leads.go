@@ -1,6 +1,7 @@
 package amocrm
 
 import (
+	"fmt"
 	"log"
 
 	"github.com/BadHomer/go-amocrm/models"
@@ -83,6 +84,7 @@ func (c *Get) Leads(id string, params *Params) (out models.RequestResponse, err 
 		if err != nil {
 			return
 		}
+		c.api.log(fmt.Sprintf("params: %v", params))
 		if params.With.Contacts {
 			options.BaseURL += "?with=contacts"
 		}
